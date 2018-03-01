@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Untitled Document</title>
+<script src="jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="screening.js"></script>
+<title>Main page of program</title>
+<style>
+.link { text-decoration:none}
+</style>
+
+
+</head>
+<link href="bootstrap/css/bootstrap.css"
+    rel="stylesheet" type="text/css" />
+<link href="bootstrap/css/bootstrap-theme.css"
+    rel="stylesheet" type="text/css" />
+<style type="text/css">
+.middle {
+	text-align: center;
+}
+.red{ color:#C03;}
+.blue{color:#33F;}
+
+</style>
+</head>
+
+<body>
+<div class="container">
+<p>&nbsp;</p>
+<table width="80%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td class="middle"><img src="img/001.jpg" width="60" height="76" /></td>
+  </tr>
+  <tr>
+    <td bgcolor="#C7C4FB" class="middle img-rounded"><strong class="blue">วิธีการติดตั้งโปรแกรม</strong></td>
+  </tr>
+  <tr>
+    <td><ul>
+      <li>Copy  folder hospital ไปไว้ใน root follder ของ website </li>
+      <li>ติดตั้งฐานข้อมูลด้วย hospital.sql ลงใน server โดยใช้ชื่อฐานข้อมูลเป็น hospital (ถ้าเปลี้ยนเป็นชื่ออื่นอาจมีปัญหาในการติดต่อฐานข้อมูลของบางไฟล์ได้)</li>
+      <li>การตั้งค่าเพื่อ connect database
+        <blockquote>
+          <p>เข้าไปที่ hospital/tool/<span class="red">db.php</span></p>
+          <p>เปิดไฟล์ <span class="red"><a href="tool/db.php">db.php</a></span> ด้วย web editor</p>
+          <p>แก้ไขค่า <span class="blue">$host ,$user , $password </span>ในเครื่องหมาย <span class="red">&quot; &quot;</span> ตาม IP server  ของท่าน
+            </p>
+          <blockquote>
+            <p>private static <span class="blue">$host</span> = &quot;<span class="red">localhost</span>&quot;;<br />
+              </p>
+            <p>private static <span class="blue">$user</span> = &quot;<span class="red">root</span>&quot;;<br />
+              </p>
+            <p>private static <span class="blue">$password</span> = <span class="red">&quot;root</span>&quot;;</p>
+          </blockquote>
+        </blockquote>
+        <ul>
+          <li>ทำการ save และเริ่มใช้งานโปรแกรมได้</li>
+        </ul>
+      </li>
+      <li>สร้าง link website เข้าสู่ โปรแกรมหลัก ด้วย ไฟล์<span class="blue"> index.html</span></li>
+      
+      <li>การเริ่มใช้โปรแกรม ให้ Log in เข้าสู่โปรแกรมด้วย</li>
+    </ul>
+      <ul>
+        <blockquote>
+          <p>User :<span class="red"> admin</span></p>
+          <p>Password :<span class="red"> admin</span></p>
+          <p>  โดย</p>
+          <blockquote>
+            <p>-ค่า default ของ User กับ Password จะ set level ไว้ที่ level 3</p>
+            <p>-Logo และชื่อโรงพยาบาลคือ รพ.จอมทอง </p>
+            <p>-สามารถเข้าไปปรับเปลี่ยนข้อมูลพื้นฐาน เพิ่มรายชื่อของโรงพยาบาลท่านได้ โดยเข้าไปในส่วนของ <a href="/hospital/editdata.php">ลงข้อมูลพื้นฐานของโรงพยาบาล</a>ที่จำเป็น</p>
+            <blockquote>
+              <p>-<strong>รายชื่อโรงพยาบาล</strong>(ต้องทำก่อนเป็นอันดับแรก) โดยเพิ่มรายชื่อ รพ.ของท่านเป็น รพ. แรก แล้วตามด้วย รพ.ในเครือข่าย(ถ้ามี)</p>
+              <p><strong>- ชื่อแพทย์</strong></p>
+              <p><strong>-ชื่อผู้ใช้(user) </strong></p>
+              <p><strong>-หน่วยงาน </strong></p>
+              <p><strong>-รายชื่อสารอาหารที่มีใช้ในโรงพยาบาล (Enteral / Parenteral formular)</strong></p>
+              <p>&nbsp;</p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      
+        <li>            อาจจะเปลี่ยนแปลงหรือล้างข้อมูลเก่าในตาราง user , doctor ,department, en , pn และ hospital เพื่อเริ่มลงข้อมูลใหม่หมดเลยได้</li>
+        <li><strong>วิธีการใส่ LOGO โรงพยาบาล</strong>ของท่านและเครือข่าย </li>
+      </ul>
+      <ul>
+        <ul>
+          <li>เปิด database <span class="red">hospital </span>==&gt;เปิด table  : <span class="red">hospital</span> </li>
+          <li>พยายามให้ รพ.ท่านเป็นรายชื่อ แรกในตาราง ( <span class="blue"><strong> id=1,hid=1</strong></span>) แล้วค่อยเพิ่มรายชื่อ รพ.เครือข่ายในภายหลัง</li>
+          <li>Save ภาพ logo ของ รพ. ของท่านใน folder <span class="red">hospital / img </span>==&gt; ตั้งชื่อเป็ฯ  <span class="blue"><strong>hid</strong>.jpg</span> (ชื่อต้องตรงกับ<strong> <span class="red">hid</span></strong> ของโรงพยาบาลท่าน เช่น รพ.จอมทอง <strong class="blue">hid=0</strong> ==&gt; save file logo เป็น <strong class="blue">0.jpg</strong>)</li>
+          <li>เพิ่มรายชื่อ โรงพยาบาลอื่นๆ และ save file ภาพ Logo ของ รพ.นั้นๆ ใน folder <span class="red">hospital / img </span>==&gt; ตั้งชื่อเป็ฯ  <span class="blue"><strong>hid</strong>.jpg</span> (โดยชื่อของภาพต้องตรงกับ<strong> <span class="red">hid</span></strong> ของโรงพยาบาลนั้นๆ) </li>
+        </ul>
+        <li>คำแนะนำการใช้โปรแกรมอื่นๆสามารถดูรายละเอียด และ Video Clip ได้ที่ <a href="guide.html">link คำแนะนำการใช้โปรแกรม</a></li>
+        <li>
+          <blockquote>
+            <blockquote>
+              <blockquote class="btn-danger">
+                <div align="center">การพัฒนาต่อยอดในอนาคต</div>
+              </blockquote>
+              <ol>
+                <li>การ export data เป็น exel เพื่อนำไปใช้วิเคราะห์ นำเสนอ ปรับปรุงงานหรือวิจัยต่อไปได้</li>
+                <li class="bg-warning">การเชื่อมกับฐานข้อมูล HIS ของโรงพยาบาล เช่น hospXP หรือ อื่นๆ</li>
+              </ol>
+            </blockquote>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </blockquote>
+        </li>
+    </ul></td>
+  </tr>
+  <tr>
+    <td><p align="center" class="btn-danger img-rounded">มีปัญหาการติดตั้ง ติดต่อ </p>
+      <p align="center" class="alert-success">1.นพ.เอกวิทย์ เอี่ยมทองอินทร์ :ศัลยแพทย์ รพ.จอมทอง ผู้พัฒนาโปรแกรม</p>
+
+        <p align="center"><span class="bg-success">Line ID : lucky022  </span>, <a href="https://www.facebook.com/ekkawit.iamthongin" class="bg-success">Tel : 0897559877</a>      </p>
+     
+      <p align="center" class="alert-success">2.คุณ <a href="https://www.facebook.com/programmergap">GAP (Natakai nitjalatvanit </a>) :Programmer ผู้เสียสละร่วมพัฒนาต่อยอด</p>
+  
+        <p align="center"><a href="https://www.facebook.com/programmergap" class="bg-success">Tel. : 0915359902</a> <a href="https://www.facebook.com/programmergap" class="alert-info">Facebook</a></p>
+   </td>
+  </tr>
+  <tr>
+    <td><p>&nbsp;</p>
+      <ol>
+        <li class="bg-primary"></li>
+    </ol></td>
+  </tr>
+  <tr>
+    <td><div align="center"><font size="-2" color="#336633"><strong><em><a href="https://www.facebook.com/ekkawit.iamthongin">Copyright @ 2017 EKKAWIT ALL RIGHTS RESERVED</a></em></strong></font></div></td>
+  </tr>
+</table>
+</body>
+</html>
