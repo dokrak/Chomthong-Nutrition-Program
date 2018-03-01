@@ -1,0 +1,2 @@
+# Chomthong-Nutrition-Program
+Nutrition care program created by Dr Ekkawit Iamthongin,Chomtong hospital,Chiang am thailand.This program is one of doctor's tool for nutrition screening(triage),assessment(BNT2013,NAF) and evaluate of  treatment goal. This come from self leaning and coding for 10 years. At the ned of work ,I received kindness and support from Natakai(GAP)-a freelance professional programmer-until now.Thanks for long journey  and every things.This Program was made for OUR THAI GREATEST KING BHOMIBOL,my lovely king.
